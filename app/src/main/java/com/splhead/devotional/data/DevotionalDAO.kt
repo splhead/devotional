@@ -10,10 +10,10 @@ import com.splhead.devotional.Devotional
 interface DevotionalDAO {
 
     @Query("SELECT * FROM devotional WHERE date = :date")
-    fun findDevotionalsByDate(date: String)
+    fun getDevotionalsOfDay(date: String): List<Devotional>
 
     @Insert
-    fun addDevotional(devotional: Devotional)
+    fun insertDevotional(devotional: Devotional)
 
 
 }
