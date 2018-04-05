@@ -7,11 +7,11 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 class LocalDevotionalDataSourceTest {
-    private val devotional = Devotional("title", "verse",
-            "2018-01-01", "text", 1)
+    private lateinit var devotional: Devotional
 
     //    private lateinit var mDatabase: AppDatabase
     private lateinit var mDataSource: LocalDevotionalDataSource
@@ -21,6 +21,9 @@ class LocalDevotionalDataSourceTest {
     @Before
     @Throws(Exception::class)
     fun initDataSource() {
+        val date = Date(Calendar.getInstance().timeInMillis)
+        devotional = Devotional("title", "verse",
+                date, "text", 1)
         /*mDatabase = Room.inMemoryDatabaseBuilder(
                 context,
                 AppDatabase::class.java

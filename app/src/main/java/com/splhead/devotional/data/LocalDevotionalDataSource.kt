@@ -2,6 +2,7 @@ package com.splhead.devotional.data
 
 import android.content.Context
 import com.splhead.devotional.Devotional
+import java.util.*
 
 
 class LocalDevotionalDataSource(private val devotionalDAO: DevotionalDAO) : DevotionalDataSource {
@@ -19,7 +20,7 @@ class LocalDevotionalDataSource(private val devotionalDAO: DevotionalDAO) : Devo
                 LocalDevotionalDataSource(AppDatabase.getInstance(context).DevotionalDAO())
     }
 
-    override fun getDevotionalsOfDay(date: String): List<Devotional> {
+    override fun getDevotionalsOfDay(date: Date): List<Devotional> {
         return devotionalDAO.getDevotionalsOfDay(date)
     }
 
