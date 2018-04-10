@@ -1,4 +1,4 @@
-package com.splhead.devotional
+package com.splhead.devotional.data
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity

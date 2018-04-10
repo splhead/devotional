@@ -1,7 +1,7 @@
-package com.splhead.devotional.data
+package com.splhead.devotional.data.database
 
 import android.content.Context
-import com.splhead.devotional.Devotional
+import com.splhead.devotional.data.Devotional
 import java.util.*
 
 
@@ -13,7 +13,8 @@ class LocalDevotionalDataSource(private val devotionalDAO: DevotionalDAO) : Devo
 
         fun getInstance(context: Context): LocalDevotionalDataSource =
                 INSTANCE ?: synchronized(this) {
-                    INSTANCE ?: getLocalDataSource(context).also { INSTANCE = it }
+                    INSTANCE
+                            ?: getLocalDataSource(context).also { INSTANCE = it }
                 }
 
         private fun getLocalDataSource(context: Context) =

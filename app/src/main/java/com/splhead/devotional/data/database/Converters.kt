@@ -1,4 +1,4 @@
-package com.splhead.devotional.data
+package com.splhead.devotional.data.database
 
 import android.arch.persistence.room.TypeConverter
 import java.util.*

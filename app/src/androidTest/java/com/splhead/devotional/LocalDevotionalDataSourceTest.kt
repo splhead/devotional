@@ -2,7 +2,8 @@ package com.splhead.devotional
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import com.splhead.devotional.data.LocalDevotionalDataSource
+import com.splhead.devotional.data.Devotional
+import com.splhead.devotional.data.database.LocalDevotionalDataSource
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
