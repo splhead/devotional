@@ -26,7 +26,9 @@ class LocalDevotionalDataSource(private val devotionalDAO: DevotionalDAO) : Devo
     }
 
     override fun insertDevotional(devotional: Devotional) {
-        devotionalDAO.insertDevotional(devotional)
+        getDevotionalsOfDay(devotional.date).isEmpty().let {
+            devotionalDAO.insertDevotional(devotional)
+        }
     }
 
 }

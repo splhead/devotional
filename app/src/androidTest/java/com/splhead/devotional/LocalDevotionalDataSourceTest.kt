@@ -1,8 +1,10 @@
 package com.splhead.devotional
 
+import android.arch.persistence.room.Room
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 import com.splhead.devotional.data.Devotional
+import com.splhead.devotional.data.database.AppDatabase
 import com.splhead.devotional.data.database.LocalDevotionalDataSource
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -14,7 +16,7 @@ import java.util.*
 class LocalDevotionalDataSourceTest {
     private lateinit var devotional: Devotional
 
-    //    private lateinit var mDatabase: AppDatabase
+//    private lateinit var mDatabase: AppDatabase
     private lateinit var mDataSource: LocalDevotionalDataSource
 
     private val context = InstrumentationRegistry.getTargetContext()
@@ -28,7 +30,7 @@ class LocalDevotionalDataSourceTest {
         /*mDatabase = Room.inMemoryDatabaseBuilder(
                 context,
                 AppDatabase::class.java
-                ).build()
+        ).build()
 
         mDataSource = LocalDevotionalDataSource(mDatabase.DevotionalDAO())*/
         mDataSource = LocalDevotionalDataSource.getInstance(context)
